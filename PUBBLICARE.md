@@ -26,14 +26,15 @@ Tutti i passi si fanno dal browser.
 
 ## 3. Versione 1.0.0
 
-1. Nel repository: Releases, "Create a new release", tag `v1.0.0`, "Publish release".
-2. Apri il commit collegato al tag e copia l'hash completo di 40 caratteri (è nell'indirizzo della pagina).
+Fatto: la release `1.0.0` punta al commit `556ce6ce8e0587a1b0d0e67f159ba48001970fd1`.
+Per le versioni successive: Releases, "Draft a new release", tag uguale al numero di versione (es. `1.0.1`).
 
 ## 4. Richiesta a F-Droid
 
 1. Crea un account su gitlab.com e fai il fork di https://gitlab.com/fdroid/fdroiddata
 2. Nel fork, cartella `metadata`: New file con nome `io.github.cinocinorob.gruzzolo.yml`, su un ramo nuovo.
-   Incolla il contenuto del file che trovi qui in `metadata-fdroid/`, con l'hash del passo 3 nel campo `commit`.
+   Incolla il contenuto del file che trovi qui in `metadata-fdroid/` (l'hash della versione è già inserito).
+   Messaggio del commit: `New App: io.github.cinocinorob.gruzzolo`; nome del ramo: `io.github.cinocinorob.gruzzolo`.
 3. Apri una merge request verso `fdroid/fdroiddata` usando il modello "App inclusion" e spunta le voci richieste.
 4. Punto da dichiarare nella richiesta: l'app include PDF.js (Apache-2.0) come file JavaScript già costruito,
    preso dal pacchetto npm `pdfjs-dist` 3.11.174, build `legacy` non minificata.
@@ -44,5 +45,5 @@ Tutti i passi si fanno dal browser.
 1. Modifica `web/src/`, poi `node web/build.mjs`.
 2. In `app/build.gradle` aumenta `versionCode` di 1 e aggiorna `versionName`.
 3. Aggiungi `fastlane/metadata/android/<lingua>/changelogs/<versionCode>.txt`.
-4. Carica i file modificati e crea una nuova release con tag `vX.Y.Z`.
+4. Carica i file modificati e crea una nuova release con tag uguale al numero di versione.
    F-Droid rileva i nuovi tag da solo (`UpdateCheckMode: Tags`).
