@@ -3,13 +3,13 @@
 Categories:
   - Money
 License: GPL-3.0-or-later
-SourceCode: https://github.com/cinocinorob/gruzzolo
-IssueTracker: https://github.com/cinocinorob/gruzzolo/issues
+SourceCode: https://github.com/cinocinorob/Gruzzolo
+IssueTracker: https://github.com/cinocinorob/Gruzzolo/issues
 
 AutoName: Gruzzolo
 
 RepoType: git
-Repo: https://github.com/cinocinorob/gruzzolo.git
+Repo: https://github.com/cinocinorob/Gruzzolo.git
 
 Builds:
   - versionName: 1.0.0
