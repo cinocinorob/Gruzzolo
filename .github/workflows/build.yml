@@ -34,6 +34,10 @@ jobs:
       - name: Build the debug APK
         run: gradle --no-daemon assembleDebug
 
+      # The same task F-Droid runs on its build server (the result is unsigned).
+      - name: Build the release APK
+        run: gradle --no-daemon assembleRelease
+
       - uses: actions/upload-artifact@v4
         with:
           name: gruzzolo-debug-apk
