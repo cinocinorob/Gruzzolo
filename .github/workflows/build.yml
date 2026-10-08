@@ -8,6 +8,8 @@ on:
 jobs:
   apk:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -36,3 +38,17 @@ jobs:
         with:
           name: gruzzolo-debug-apk
           path: app/build/outputs/apk/debug/*.apk
+
+      # A direct .apk link for testing on a phone (no zip to extract):
+      # https://github.com/<owner>/<repo>/releases/download/test/gruzzolo-test.apk
+      - name: Publish the test APK as a direct download
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp app/build/outputs/apk/debug/app-debug.apk gruzzolo-test.apk
+          gh release delete test --cleanup-tag --yes || true
+          sleep 5
+          gh release create test gruzzolo-test.apk --prerelease --target "$GITHUB_SHA" \
+            --title "APK di prova" \
+            --notes "Build di prova, firmata con una chiave temporanea. Non è la versione pubblicata su F-Droid."

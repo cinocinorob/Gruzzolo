@@ -16,7 +16,10 @@ Tutti i passi si fanno dal browser.
 ## 2. Prima compilazione e prova sul telefono
 
 1. Apri la scheda Actions del repository: la compilazione parte da sola dopo il caricamento.
-2. Se è verde, apri l'esecuzione, scarica `gruzzolo-debug-apk` dalla sezione Artifacts e installa l'APK sul telefono.
+2. Se è verde, scarica l'APK di prova dal telefono con questo link diretto e installalo:
+   https://github.com/cinocinorob/Gruzzolo/releases/download/test/gruzzolo-test.apk
+   Ogni build di prova ha una firma diversa: per installarne una nuova va prima disinstallata la precedente
+   (esporta prima la copia di sicurezza).
 3. Prova almeno: creare un obiettivo, registrare un versamento, importare un estratto N26 in PDF,
    esportare la copia di sicurezza e ripristinarla, tema scuro, tasto indietro.
 4. Se è rossa, il messaggio d'errore è nel log del passo "Build the debug APK".
