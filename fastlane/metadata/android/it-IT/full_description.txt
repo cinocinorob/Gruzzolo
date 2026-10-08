@@ -1,0 +1,27 @@
+Gruzzolo trasforma il risparmio in un gioco onesto: premia solo i soldi che metti da parte davvero e che restano lì.
+
+<b>Come funziona</b>
+• Scegli un obiettivo e un impegno fisso, a settimana o al mese.
+• Registri i versamenti a mano, oppure importi l'estratto conto.
+• L'impegno si calcola al netto dei prelievi: versare e ritirare subito non conta.
+• Ogni periodo centrato allunga la serie. Un jolly copre un periodo saltato.
+
+<b>Premi</b>
+• 14 medaglie da collezionare, ognuna in bronzo, argento e oro.
+• Tre missioni nuove a ogni periodo.
+• Livelli, record personali e una medaglia da tenere in vetrina.
+• Nessun premio casuale: tutto dipende da quello che fai.
+
+<b>Spese</b>
+• Legge l'estratto conto PDF di N26 e il CSV di Revolut.
+• Mostra categorie, esercenti, abbonamenti ricorrenti e le voci su cui puoi agire.
+• Tetti di spesa per categoria: il resto di un mese chiuso sotto il tetto si può mettere da parte.
+
+<b>Riservatezza</b>
+• L'app non chiede il permesso di accedere a Internet: non può inviare nulla.
+• I file vengono letti sul telefono. Si salvano solo le operazioni, senza IBAN.
+• Nessuna pubblicità, nessun tracciamento, nessun account.
+• Copia di sicurezza esportabile in un file.
+
+<b>Cosa non fa</b>
+Gruzzolo non sposta denaro e non si collega alla banca: i trasferimenti li fai tu, l'app li registra. Non è affiliata a N26 né a Revolut.

@@ -1,0 +1,43 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'io.github.cinocinorob.gruzzolo'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId 'io.github.cinocinorob.gruzzolo'
+        minSdk 26
+        targetSdk 36
+        versionCode 1
+        versionName '1.0.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    // No dependency metadata block in the APK: required for reproducible F-Droid builds.
+    dependenciesInfo {
+        includeInApk false
+        includeInBundle false
+    }
+
+    lint {
+        abortOnError false
+    }
+}
+
+// No dependencies: the app uses only Android framework classes.

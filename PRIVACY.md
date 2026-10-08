@@ -1,0 +1,5 @@
+# Informativa sulla riservatezza / Privacy
+
+**Italiano.** Gruzzolo non raccoglie, non trasmette e non condivide alcun dato. L'app non richiede il permesso di accesso a Internet, quindi non può comunicare con l'esterno. Obiettivi, movimenti e operazioni importate dagli estratti conto restano nella memoria privata dell'app sul tuo telefono. Gli estratti vengono letti sul dispositivo; degli estratti si salvano data, importo, descrizione e categoria delle operazioni, non gli IBAN. Puoi esportare una copia di sicurezza in un file a tua scelta e cancellare tutto dalle impostazioni. Disinstallando l'app i dati vengono eliminati.
+
+**English.** Gruzzolo does not collect, transmit or share any data. The app does not request the Internet permission, so it cannot communicate with the outside. Goals, movements and transactions imported from statements stay in the app's private storage on your phone. Statements are read on the device; only the date, amount, description and category of each transaction are stored, never IBANs. You can export a backup to a file of your choice and erase everything from the settings. Uninstalling the app deletes the data.

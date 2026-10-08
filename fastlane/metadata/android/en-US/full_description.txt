@@ -1,0 +1,27 @@
+Gruzzolo turns saving into an honest game: it rewards only money you actually set aside and keep there. The interface is in Italian.
+
+<b>How it works</b>
+• Pick a goal and a regular commitment, weekly or monthly.
+• Log deposits by hand, or import your bank statement.
+• The commitment is net of withdrawals: depositing and taking it straight back does not count.
+• Each period you hit extends your streak. A joker covers one missed period.
+
+<b>Rewards</b>
+• 14 collectible medals, each in bronze, silver and gold.
+• Three new missions every period.
+• Levels, personal records and one medal to keep on display.
+• No random rewards: everything depends on what you do.
+
+<b>Spending</b>
+• Reads the N26 PDF statement and the Revolut CSV export.
+• Shows categories, merchants, recurring subscriptions and where you can act.
+• Monthly caps per category: what is left under a cap can be moved to savings.
+
+<b>Privacy</b>
+• The app does not request the Internet permission: it cannot send anything.
+• Files are read on the phone. Only the transactions are stored, without IBANs.
+• No ads, no tracking, no account.
+• Backup to a file you choose.
+
+<b>What it does not do</b>
+Gruzzolo does not move money and does not connect to your bank. It is not affiliated with N26 or Revolut.

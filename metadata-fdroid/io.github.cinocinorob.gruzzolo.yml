@@ -1,0 +1,25 @@
+# Draft for https://gitlab.com/fdroid/fdroiddata  (file: metadata/<application ID>.yml)
+# Before the merge request, replace the tag in `commit` with the full commit hash of v1.0.0.
+Categories:
+  - Money
+License: GPL-3.0-or-later
+SourceCode: https://github.com/cinocinorob/gruzzolo
+IssueTracker: https://github.com/cinocinorob/gruzzolo/issues
+
+AutoName: Gruzzolo
+
+RepoType: git
+Repo: https://github.com/cinocinorob/gruzzolo.git
+
+Builds:
+  - versionName: 1.0.0
+    versionCode: 1
+    commit: v1.0.0
+    subdir: app
+    gradle:
+      - yes
+
+AutoUpdateMode: Version
+UpdateCheckMode: Tags
+CurrentVersion: 1.0.0
+CurrentVersionCode: 1

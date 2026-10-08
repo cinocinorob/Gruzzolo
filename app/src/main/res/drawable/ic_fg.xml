@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The Gruzzolo mascot: a small sack of coins. Drawn on a 120 unit grid, scaled into the 108dp icon. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:scaleX="0.52"
+        android:scaleY="0.52"
+        android:translateX="22.8"
+        android:translateY="20.5">
+        <path android:fillColor="#F4B63C" android:pathData="M43,21c5,-6 11,-3 17,1 6,-4 12,-7 17,-1 -2,6 -6,10 -9,13H52c-3,-3 -7,-7 -9,-13z" />
+        <path android:fillColor="#FFD25E" android:pathData="M60,31c-21,6 -39,30 -39,50 0,18 17,26 39,26s39,-8 39,-26c0,-20 -18,-44 -39,-50z" />
+        <path android:fillColor="#F2603F" android:pathData="M51,30h18a4,4 0,0 1,0 8h-18a4,4 0,0 1,0 -8z" />
+        <path android:fillColor="#3B2A08" android:pathData="M42.6,68a4.4,4.4 0,1 0,8.8 0a4.4,4.4 0,1 0,-8.8 0z" />
+        <path android:fillColor="#3B2A08" android:pathData="M68.6,68a4.4,4.4 0,1 0,8.8 0a4.4,4.4 0,1 0,-8.8 0z" />
+        <path android:strokeColor="#3B2A08" android:strokeWidth="3" android:strokeLineCap="round" android:pathData="M51,80q9,8 18,0" />
+    </group>
+</vector>
