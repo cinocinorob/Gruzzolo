@@ -24,10 +24,12 @@ Tutti i passi si fanno dal browser.
    esportare la copia di sicurezza e ripristinarla, tema scuro, tasto indietro.
 4. Se è rossa, il messaggio d'errore è nel log del passo "Build the debug APK".
 
-## 3. Versione 1.0.0
+## 3. Versioni
 
-Fatto: la release `1.0.0` punta al commit `556ce6ce8e0587a1b0d0e67f159ba48001970fd1`.
-Per le versioni successive: Releases, "Draft a new release", tag uguale al numero di versione (es. `1.0.1`).
+- `1.0.0`: commit `556ce6ce8e0587a1b0d0e67f159ba48001970fd1`.
+- `1.0.1` (R8 attivo): commit `3ed9492ad6cf2974828a358f9ebbb8390097d0e8`. È quella indicata nel file per F-Droid.
+
+Per le versioni successive: Releases, "Draft a new release", tag uguale al numero di versione (es. `1.0.2`).
 
 ## 4. Richiesta a F-Droid
 
