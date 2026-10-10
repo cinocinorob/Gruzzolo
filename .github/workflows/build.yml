@@ -50,13 +50,20 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # Publish the minified release build (the code F-Droid ships), signed with the
-          # throwaway debug key so it can be installed for testing.
-          APKSIGNER="$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -1)/apksigner"
-          "$APKSIGNER" sign --ks "$HOME/.android/debug.keystore" --ks-pass pass:android \
-            --ks-key-alias androiddebugkey --key-pass pass:android \
-            --out gruzzolo-test.apk app/build/outputs/apk/release/app-release-unsigned.apk
-          "$APKSIGNER" verify gruzzolo-test.apk
+          # Publish the minified release build (the code F-Droid ships), signed with a
+          # throwaway key so it can be installed for testing.
+          SDK="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-}}"
+          APKSIGNER="$(find "$SDK/build-tools" -name apksigner -type f 2>/dev/null | sort -V | tail -1 || true)"
+          [ -n "$APKSIGNER" ] || { echo "::error::apksigner not found under '$SDK'"; exit 1; }
+          UNSIGNED=app/build/outputs/apk/release/app-release-unsigned.apk
+          [ -f "$UNSIGNED" ] || { echo "::error::missing $UNSIGNED: $(ls app/build/outputs/apk/release | tr '\n' ' ')"; exit 1; }
+          keytool -genkeypair -keystore "$RUNNER_TEMP/test.jks" -storepass android -keypass android \
+            -alias test -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Gruzzolo test build" \
+            || { echo "::error::keytool failed"; exit 1; }
+          "$APKSIGNER" sign --ks "$RUNNER_TEMP/test.jks" --ks-pass pass:android \
+            --ks-key-alias test --key-pass pass:android \
+            --out gruzzolo-test.apk "$UNSIGNED" || { echo "::error::apksigner sign failed ($APKSIGNER)"; exit 1; }
+          "$APKSIGNER" verify gruzzolo-test.apk || { echo "::error::apksigner verify failed"; exit 1; }
           gh release delete test --cleanup-tag --yes || true
           sleep 5
           gh release create test gruzzolo-test.apk --prerelease --target "$GITHUB_SHA" \
