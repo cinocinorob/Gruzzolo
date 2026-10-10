@@ -11,14 +11,14 @@ RepoType: git
 Repo: https://github.com/cinocinorob/Gruzzolo.git
 
 Builds:
-  - versionName: 1.0.1
-    versionCode: 2
-    commit: 3ed9492ad6cf2974828a358f9ebbb8390097d0e8
+  - versionName: 1.0.2
+    versionCode: 3
+    commit: 01929e37dd2e9b505d348bc759b0a9cfde159ef7
     subdir: app
     gradle:
       - yes
 
 AutoUpdateMode: Version
 UpdateCheckMode: Tags ^v?[0-9.]+$
-CurrentVersion: 1.0.1
-CurrentVersionCode: 2
+CurrentVersion: 1.0.2
+CurrentVersionCode: 3

@@ -27,9 +27,10 @@ Tutti i passi si fanno dal browser.
 ## 3. Versioni
 
 - `1.0.0`: commit `556ce6ce8e0587a1b0d0e67f159ba48001970fd1`.
-- `1.0.1` (R8 attivo): commit `3ed9492ad6cf2974828a358f9ebbb8390097d0e8`. È quella indicata nel file per F-Droid.
+- `1.0.1` (R8 attivo): commit `3ed9492ad6cf2974828a358f9ebbb8390097d0e8`.
+- `1.0.2` (interfaccia in inglese e in italiano): commit `01929e37dd2e9b505d348bc759b0a9cfde159ef7`. È quella indicata nel file per F-Droid.
 
-Per le versioni successive: Releases, "Draft a new release", tag uguale al numero di versione (es. `1.0.2`).
+Per le versioni successive: Releases, "Draft a new release", tag uguale al numero di versione (es. `1.0.3`).
 
 ## 4. Richiesta a F-Droid
 
