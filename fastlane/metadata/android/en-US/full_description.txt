@@ -1,4 +1,4 @@
-Gruzzolo turns saving into an honest game: it rewards only money you actually set aside and keep there. The interface is in Italian.
+Gruzzolo turns saving into an honest game: it rewards only money you actually set aside and keep there. The interface is available in English and Italian.
 
 <b>How it works</b>
 • Pick a goal and a regular commitment, weekly or monthly.
@@ -13,7 +13,7 @@ Gruzzolo turns saving into an honest game: it rewards only money you actually se
 • No random rewards: everything depends on what you do.
 
 <b>Spending</b>
-• Reads the N26 PDF statement and the Revolut CSV export.
+• Reads the N26 PDF statement (Italian-language statements) and the Revolut CSV export.
 • Shows categories, merchants, recurring subscriptions and where you can act.
 • Monthly caps per category: what is left under a cap can be moved to savings.
 

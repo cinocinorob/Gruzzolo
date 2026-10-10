@@ -1,0 +1,1 @@
+The interface is now available in English, which is the default. Italian is used on devices set to Italian, and the language can be changed in the settings.

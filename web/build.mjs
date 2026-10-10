@@ -4,19 +4,19 @@
 // No dependencies: run with `node web/build.mjs` from the repository root.
 import {readFileSync, writeFileSync, mkdirSync} from 'node:fs';
 const src = f => readFileSync(new URL('./src/' + f, import.meta.url), 'utf8');
-const css = src('style.css'), core = src('core.js'), ui = src('ui.js');
+const css = src('style.css'), i18n = src('i18n.js'), core = src('core.js'), ui = src('ui.js');
 const body = `
 <div class="app">
   <header class="titlebar"><h1 class="t-xl" id="ttl">Gruzzolo</h1><div class="btns" id="tbtn"></div></header>
   <main id="view"></main>
 </div>
-<nav class="tabs" aria-label="Sezioni"><div id="tabs"></div></nav>
+<nav class="tabs" aria-label="Sections"><div id="tabs"></div></nav>
 <dialog id="sheet" class="sheetdlg"></dialog>
 <dialog id="cele" class="popup"></dialog>
 <div id="toast" role="status" hidden></div>
 
 <script>
-/*CORE-START*/${core}/*CORE-END*/
+/*CORE-START*/${i18n}${core}/*CORE-END*/
 ${ui}</script>
 `;
 const web = `<title>Gruzzolo</title>
@@ -25,7 +25,7 @@ const web = `<title>Gruzzolo</title>
 ${css}</style>
 ${body}`;
 const android = `<!doctype html>
-<html lang="it"><head><meta charset="utf-8">
+<html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Gruzzolo</title>
 <style>

@@ -1,13 +1,7 @@
 
-const LEVELS=[[0,'Cicala'],[150,'Cicala pentita'],[400,'Formica apprendista'],[800,'Formica operaia'],[1400,'Formica esploratrice'],[2200,'Formica capomastro'],[3200,'Formica tesoriera'],[4500,'Formica architetta'],[6000,'Formica regina']];
-const TIER=['Da sbloccare','Bronzo','Argento','Oro'];
-const MISS={
-  early:['clock','Paga prima te stesso',r=>r==='m'?'Fai un versamento nei primi 5 giorni del mese.':'Fai un versamento entro martedì.'],
-  avoid:['bagoff','Tentazione respinta',()=>'Annota una spesa evitata e trasferisci la cifra.'],
-  extra:['trend','Un passo in più',()=>'Versa almeno il 120% del tuo impegno.'],
-  twice:['repeat','Due volte',()=>'Fai almeno due versamenti distinti.'],
-  c52:['grid','Una casella',()=>'Registra una casella della sfida 52.'],
-  ns:['cal','Giorni essenziali',r=>r==='m'?'Segna 10 giorni essenziali.':'Segna 3 giorni essenziali.']};
+/* level thresholds, mission and medal definitions: every name and description is in i18n.js */
+const LEVELS=[0,150,400,800,1400,2200,3200,4500,6000];
+const MISS={early:'clock',avoid:'bagoff',extra:'trend',twice:'repeat',c52:'grid',ns:'cal'};
 const pad=n=>String(n).padStart(2,'0');
 const ymd=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
 const pd=s=>{const p=String(s).split('-').map(Number);return new Date(p[0],p[1]-1,p[2],12)};
@@ -57,8 +51,8 @@ function score(st,today,T){
   const nd=nsDays(st).length;add('ns',10*nd+(nd>=25?200:0));
   add('subs',40*st.ch.subs.filter(x=>x.cut).length);
   const capsOk=T?capResults(st,T,today).filter(x=>x.closed&&x.ok&&x.counts).length:0;add('caps',80*capsOk);
-  let lv=0;for(let i=0;i<LEVELS.length;i++)if(xp>=LEVELS[i][0])lv=i;
-  return{xp,lv,name:LEVELS[lv][1],base:LEVELS[lv][0],nextAt:LEVELS[lv+1]?LEVELS[lv+1][0]:null,nextName:LEVELS[lv+1]?LEVELS[lv+1][1]:null,parts,P,capsOk}}
+  let lv=0;for(let i=0;i<LEVELS.length;i++)if(xp>=LEVELS[i])lv=i;
+  return{xp,lv,name:tr('levels')[lv],base:LEVELS[lv],nextAt:LEVELS[lv+1]||null,nextName:tr('levels')[lv+1]||null,parts,P,capsOk}}
 function c52Set(st){const s=new Set();for(const e of st.ev)if(e.k==='dep'&&e.s==='c52'&&e.ref)s.add(+e.ref.slice(4));return s}
 function medals(st,sc){
   const m=st.set.r==='m',L=sc.P.list;let nDep=0,nConv=0,nAuto=0,over=0,tris=0,back=0,hold=0,bal=0,peak=0;
@@ -66,21 +60,22 @@ function medals(st,sc){
   st.ev.filter(e=>e.k==='dep'||e.k==='wd').sort((a,b)=>a.d<b.d?-1:a.d>b.d?1:(a.ts||0)-(b.ts||0)).forEach(e=>{bal+=e.k==='dep'?e.a:-e.a;if(bal>peak)peak=bal});
   L.forEach((p,i)=>{if(i<L.length-1&&p.s>0&&!p.wd)hold++;if(p.s>0&&p.s>=p.t*1.5)over++;if(p.md===3)tris++;if(p.status==='hit'&&i>0&&L[i-1].status==='miss')back++});
   const D=[
-    ['streak','flame','Costanza',m?'Mesi consecutivi con l\'impegno centrato. Conta la serie migliore.':'Settimane consecutive con l\'impegno centrato. Conta la serie migliore.',sc.P.best,m?[2,6,12]:[4,12,26]],
-    ['hold','lock','Tenuta',m?'Mesi chiusi con versamenti e senza prelievi anticipati.':'Settimane chiuse con versamenti e senza prelievi anticipati.',hold,m?[2,6,12]:[4,12,26]],
-    ['peak','coins','Gruzzolo','Saldo più alto mai raggiunto nel salvadanaio.',Math.floor(peak/100),[100,1000,5000],1],
-    ['deps','wallet','Versamenti','Versamenti registrati.',nDep,[1,10,50]],
-    ['goals','flag','Traguardo','Obiettivi portati al 100%.',st.goals.filter(g=>g.done).length,[1,2,4]],
-    ['conv','bagoff','Tentazioni respinte','Spese evitate e poi trasferite davvero.',nConv,[1,5,20]],
-    ['auto','auto','Pilota automatico','Bonifici ricorrenti confermati.',nAuto,[1,4,12]],
-    ['over','trend','Oltre l\'impegno','Periodi chiusi ad almeno il 150% dell\'impegno.',over,[1,5,10]],
-    ['tris','star','Tris','Periodi con tutte e tre le missioni completate.',tris,[1,5,15]],
-    ['back','restart','Ripartenza','Periodi centrati subito dopo uno saltato.',back,[1,2,3]],
-    ['cells','grid','52 caselle','Caselle registrate nella sfida.',c52Set(st).size,[13,26,52]],
-    ['ns','cal','Giorni essenziali','Giorni segnati nella sfida dei 30 giorni.',nsDays(st).length,[10,25,30]],
-    ['cuts','cut','Taglio netto','Abbonamenti disdetti.',st.ch.subs.filter(x=>x.cut).length,[1,3,5]],
-    ['caps','tag','Sotto il tetto','Tetti di spesa rispettati in un mese chiuso.',sc.capsOk||0,[1,3,6]]];
-  return D.map(x=>{let tier=0;for(const t of x[5])if(x[4]>=t)tier++;return{id:x[0],ic:x[1],n:x[2],d:x[3],val:x[4],th:x[5],tier,next:x[5][tier]||null,money:!!x[6]}})}
+    ['streak','flame',sc.P.best,m?[2,6,12]:[4,12,26]],
+    ['hold','lock',hold,m?[2,6,12]:[4,12,26]],
+    ['peak','coins',Math.floor(peak/100),[100,1000,5000],1],
+    ['deps','wallet',nDep,[1,10,50]],
+    ['goals','flag',st.goals.filter(g=>g.done).length,[1,2,4]],
+    ['conv','bagoff',nConv,[1,5,20]],
+    ['auto','auto',nAuto,[1,4,12]],
+    ['over','trend',over,[1,5,10]],
+    ['tris','star',tris,[1,5,15]],
+    ['back','restart',back,[1,2,3]],
+    ['cells','grid',c52Set(st).size,[13,26,52]],
+    ['ns','cal',nsDays(st).length,[10,25,30]],
+    ['cuts','cut',st.ch.subs.filter(x=>x.cut).length,[1,3,5]],
+    ['caps','tag',sc.capsOk||0,[1,3,6]]];
+  const N=tr('medal'),DS=tr('medalDo');
+  return D.map(x=>{let tier=0;for(const th of x[3])if(x[2]>=th)tier++;return{id:x[0],ic:x[1],n:N[x[0]],d:DS[x[0]](m),val:x[2],th:x[3],tier,next:x[3][tier]||null,money:!!x[4]}})}
 function goalPlan(st,g,today){
   const saved=goalSaved(st,g.id),left=Math.max(0,g.t-saved);let per=null,nPer=null,late=false;
   if(g.by&&left>0){const days=diffDays(today,g.by);late=days<0;nPer=days<=0?1:Math.max(1,Math.ceil(st.set.r==='m'?days/30.44:days/7));per=Math.ceil(left/nPer/100)*100}

@@ -1,13 +1,14 @@
 # Gruzzolo
 
 Risparmia giocando: un impegno fisso, medaglie, missioni e le tue spese lette dall'estratto conto.
-App Android completamente offline (nessun permesso di rete), in italiano.
+App Android completamente offline (nessun permesso di rete), in italiano e in inglese: l'inglese è la lingua predefinita, sui telefoni in italiano l'app è in italiano.
 
-*Gamified savings and spending tracker for Android. Fully offline, no network permission. Italian interface.*
+*Gamified savings and spending tracker for Android. Fully offline, no network permission. English and Italian interface (English by default, Italian on devices set to Italian).*
 
 ## Com'è fatta
 
 - `web/src/` contiene l'app vera e propria: una pagina HTML, CSS e JavaScript senza dipendenze.
+- `web/src/i18n.js` contiene tutti i testi, ognuno in inglese e in italiano. Categorie e nomi salvati restano in italiano nei dati e vengono tradotti solo a schermo, così chi cambia lingua non perde nulla.
 - `web/build.mjs` la assembla in `app/src/main/assets/index.html`.
 - `app/` è un progetto Android minimo: una sola `Activity` con una `WebView` che mostra la pagina dagli asset.
   Non usa librerie: solo classi del framework Android.

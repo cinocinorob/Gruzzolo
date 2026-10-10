@@ -1,4 +1,4 @@
-Gruzzolo trasforma il risparmio in un gioco onesto: premia solo i soldi che metti da parte davvero e che restano lì.
+Gruzzolo trasforma il risparmio in un gioco onesto: premia solo i soldi che metti da parte davvero e che restano lì. L'interfaccia è disponibile in italiano e in inglese.
 
 <b>Come funziona</b>
 • Scegli un obiettivo e un impegno fisso, a settimana o al mese.
@@ -13,7 +13,7 @@ Gruzzolo trasforma il risparmio in un gioco onesto: premia solo i soldi che mett
 • Nessun premio casuale: tutto dipende da quello che fai.
 
 <b>Spese</b>
-• Legge l'estratto conto PDF di N26 e il CSV di Revolut.
+• Legge l'estratto conto PDF di N26 (in italiano) e il CSV di Revolut.
 • Mostra categorie, esercenti, abbonamenti ricorrenti e le voci su cui puoi agire.
 • Tetti di spesa per categoria: il resto di un mese chiuso sotto il tetto si può mettere da parte.
 
