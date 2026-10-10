@@ -1,0 +1,1 @@
+App più leggera: attivata la riduzione del codice (R8). Nessuna modifica alle funzioni.

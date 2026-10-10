@@ -50,7 +50,13 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          cp app/build/outputs/apk/debug/app-debug.apk gruzzolo-test.apk
+          # Publish the minified release build (the code F-Droid ships), signed with the
+          # throwaway debug key so it can be installed for testing.
+          APKSIGNER="$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -1)/apksigner"
+          "$APKSIGNER" sign --ks "$HOME/.android/debug.keystore" --ks-pass pass:android \
+            --ks-key-alias androiddebugkey --key-pass pass:android \
+            --out gruzzolo-test.apk app/build/outputs/apk/release/app-release-unsigned.apk
+          "$APKSIGNER" verify gruzzolo-test.apk
           gh release delete test --cleanup-tag --yes || true
           sleep 5
           gh release create test gruzzolo-test.apk --prerelease --target "$GITHUB_SHA" \
