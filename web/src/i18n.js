@@ -412,7 +412,7 @@ const I18N={
   avoidDo:['Note it','Annota'],
   errAvoid:['Enter what you skipped.','Scrivi che cosa hai evitato.'],
   wdFrom:['Withdraw from {0}','Preleva da {0}'],
-  wdD:['Available: {0}. An early withdrawal is subtracted from the period\'s deposits and can make you miss the commitment. Points already earned stay.','Disponibili {0}. Un prelievo anticipato si sottrae dai versamenti del periodo e può far saltare l\'impegno. I punti già ottenuti restano.'],
+  wdD:['Available: {0}. An early withdrawal is subtracted from the period\'s deposits. If the period drops below your commitment it no longer counts as hit, and points, streak and level are recalculated. If you are spending the money on what you saved for, turn on the option below.','Disponibili {0}. Un prelievo anticipato si sottrae dai versamenti del periodo. Se il periodo scende sotto l\'impegno non risulta più centrato, e punti, serie e livello vengono ricalcolati. Se stai spendendo i soldi per lo scopo dell\'obiettivo, attiva l\'opzione qui sotto.'],
   wdAmt:['How much are you withdrawing (€)','Quanto prelevi (€)'],
   wdUse:['This is what I was saving for','È la spesa per cui risparmiavo'],
   wdUseD:['When on, the withdrawal is not subtracted from the period\'s commitment.','Se è attivo, il prelievo non si sottrae dall\'impegno del periodo.'],

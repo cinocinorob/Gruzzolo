@@ -1,1 +1,2 @@
 L'interfaccia è ora disponibile anche in inglese, che è la lingua predefinita. Sui telefoni in italiano resta in italiano, e la lingua si può cambiare dalle impostazioni.
+La schermata del prelievo ora spiega correttamente che un prelievo anticipato può far perdere il periodo, e che in quel caso punti, serie e livello vengono ricalcolati.

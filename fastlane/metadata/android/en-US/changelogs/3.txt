@@ -1,1 +1,2 @@
 The interface is now available in English, which is the default. Italian is used on devices set to Italian, and the language can be changed in the settings.
+The withdrawal screen now explains correctly that an early withdrawal can make a period no longer count, and that points, streak and level are then recalculated.
