@@ -41,6 +41,13 @@ I passi per F-Droid sono in `PUBBLICARE.md`.
 | PDF.js (Mozilla), build `legacy` dal pacchetto npm `pdfjs-dist` | 3.11.174 | Apache-2.0 | `app/src/main/assets/pdfjs/` |
 | Carattere Nunito, dal pacchetto npm `@fontsource-variable/nunito` | 5.x | OFL-1.1 | `app/src/main/assets/fonts/` |
 
+## How it was made
+
+Gruzzolo was developed with the help of an AI assistant (Anthropic's Claude), as noted in the
+`Co-Authored-By` trailers of the commits. The author reviews, tests and publishes each release.
+
+Sviluppata con l'aiuto di un assistente AI (Claude di Anthropic), come indicato nei commit.
+
 ## Licenza
 
 GPL-3.0-or-later. Vedi `LICENSE`.
