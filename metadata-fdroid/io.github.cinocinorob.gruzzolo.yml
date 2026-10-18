@@ -13,7 +13,7 @@ Repo: https://github.com/cinocinorob/Gruzzolo.git
 Builds:
   - versionName: 1.0.2
     versionCode: 3
-    commit: 01929e37dd2e9b505d348bc759b0a9cfde159ef7
+    commit: 0c9cb6ec63ee69a73d3f3c9f58aff641e6a1404c
     subdir: app
     gradle:
       - yes
